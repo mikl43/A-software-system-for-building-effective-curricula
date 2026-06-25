@@ -1,0 +1,8 @@
+The goal of the program is to implement a program for automatically constructing and analyzing graphs. A graph in this context is an individualized curriculum. At its core, this graph should represent a network (time) schedule.
+To construct a graph, you will need a set of predefined vertices; how they are defined is not important for solving your problem.
+Graph construction algorithm (individualized curriculum):
+ In addition to the predefined vertices themselves, we also define the relationships between them, since some subjects in the curriculum cannot be taught before the basic disciplines required for their study;
+ We identify groups of such interconnected subjects and connect each vertex to each other;
+ Next, we find the minimum spanning tree for each group. Any algorithm for constructing the spanning tree can be chosen.
+ Then, we begin to construct the overall graph. To do this, we take each vertex of each subgraph and connect it to each vertex. Then, we find the minimum spanning tree for the overall graph. Next, we take the second vertex of the first subgraph and connect it to all the vertices of the remaining subgraphs, and so on, until we have reconnected all the vertices of all the subgraphs.
+ Since there will be quite a few such shared graphs, and we only need to choose one, we will use the length of the minimum spanning tree obtained for each shared graph as a criterion – we will ultimately choose the shared graph whose minimum spanning tree length is minimal.
